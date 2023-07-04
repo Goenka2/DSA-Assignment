@@ -32,10 +32,8 @@ public class LinkedList {
 		}
 
 	}
-	
-	
-	public boolean deleteAtLast() {
 
+	public boolean deleteAtLast() {
 
 		if (head == null) {
 
@@ -48,43 +46,88 @@ public class LinkedList {
 
 			while (true) {
 				if (delete.getNext() != null) {
-					temp = delete; 
+					temp = delete;
 					delete = delete.getNext();
-				} else if(delete.getNext()== null) {
-					
-					temp.setNext(null);
-					
-					if(delete == head) {
+				} else {
+
+					if (delete == head) {
+
+						temp = delete = head = null;
 						
-						delete = head = null;
-						
+						return true;
+
+					} else {
+						temp.setNext(null);
+						delete = null;
+
+						return true;
 					}
-					
-					return true;
-					
-					
+
 				}
 			}
 		}
 
 	}
-	
-	
-	public boolean display() {
-		
+
+	public boolean insertAtBegin(int data) {
+
 		Node temp = head;
+
+		head = new Node(data);
+
+		head.setNext(temp);
+
+		return true;
+
+	}
+	
+	public boolean reverseLinkedList() {
 		
-		while(temp!=null) {
-			
-			
+		Node prev = null;
+		Node next = null;
+		Node current  = head;
+		
+		while(current!=null) {
+		next = current.getNext();
+		current.setNext(prev);
+		prev = current;
+		current = next;
+		}
+		
+		head = prev;
+		
+		
+		return true;
+		
+	}
+
+	public boolean deleteAtBegin() {
+
+		Node temp = head;
+
+		head = head.getNext();
+
+		temp.setNext(null);
+
+		temp = null;
+
+		return true;
+
+	}
+
+	public boolean display() {
+
+		Node temp = head;
+
+		while (temp != null) {
+
 			System.out.println(temp.getData());
-			
+
 			temp = temp.getNext();
-			
+
 		}
 		return false;
-		
-				
+
 	}
 
 	class Node {

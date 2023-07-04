@@ -13,13 +13,16 @@ public static void main(String[] args) {
 	ll.insertAtLast(60);
 	ll.insertAtLast(10);
 	ll.insertAtLast(25);
-	ll.deleteAtLast();
-	ll.deleteAtLast();
-	ll.deleteAtLast();
-	ll.deleteAtLast();
-	ll.deleteAtLast();
-	ll.deleteAtLast();
-	ll.deleteAtLast();
+//	ll.deleteAtLast();
+//	ll.deleteAtLast();
+//	ll.deleteAtLast();
+//	ll.deleteAtLast();
+//	ll.deleteAtLast();
+//	ll.deleteAtLast();
+//	ll.deleteAtLast();
+//	ll.insertAtBegin(20);
+//	ll.insertAtBegin(30);
+	ll.reverseLinkedList();
 
 	
 	ll.display();
